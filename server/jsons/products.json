@@ -1,0 +1,16 @@
+[
+    { 
+        "id_product": 1000, 
+        "name_product": "Avengers Infinity War", 
+        "value": 6000, 
+        "id_classification": 0, 
+        "id_inventory": 0 
+    },
+    { 
+        "id_product": 1001, 
+        "name_product": "Parasite", 
+        "value": 8000, 
+        "id_classification": 1, 
+        "id_inventory": 1 
+    }
+]

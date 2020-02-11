@@ -1,0 +1,10 @@
+[
+    { 
+        "id_classification": 100, 
+        "name_classification": "Acción" 
+    },
+    { 
+        "id_classification": 101, 
+        "name_classification": "Drama"
+    }
+]

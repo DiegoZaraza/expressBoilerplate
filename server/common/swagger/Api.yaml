@@ -7,6 +7,12 @@ basePath: /api/v1
 tags:
   - name: Examples
     description: Simple example endpoints
+  - name: Inventory
+    description: Inventory code for product
+  - name: Classification
+    description: Inventory code for product
+  - name: Product
+    description: Inventory code for product
   - name: Specification
     description: The swagger API specification
 
@@ -26,6 +32,50 @@ definitions:
         type: string
         description: The example name
 
+  InventoryBody:
+    type: object
+    title: inventory
+    required:
+      - bar_code
+      - quantity
+    properties:
+      bar_code:
+        type: string
+        description: bar code for account
+      quantity:
+        type: number
+        description: quantity exist
+
+  ClassificationBody:
+    type: object
+    title: classification
+    required:
+      - name
+    properties:
+      name:
+        type: string
+        description: name for Classification
+  
+  ProductBody:
+    type: object
+    title: product
+    required:
+      - name_product
+      - value
+      - id_classification
+      - id_inventory
+    properties:
+      name_product:
+        type: string
+        description: name for product
+      value:
+        type: number
+        description: Value for product
+      id_classificarion:
+        type: number
+      id_inventory:
+        type: number
+
 paths:
   /examples:
     get:
@@ -42,13 +92,208 @@ paths:
       parameters:
         - name: example
           in: body
-          description: number of items to skip
+          description: bar code for assign to product
           required: true
-          schema: 
+          schema:
             $ref: "#/definitions/ExampleBody"
       responses:
         200:
           description: Returns all examples
+
+  /inventory:
+    get:
+      tags:
+        - Inventory
+      description: Return code inventory
+      responses:
+        200:
+          description: Return all codes
+        404:
+          description: Item not found
+    post:
+      tags:
+        - Inventory
+      description: Create a new inventory code
+      parameters:
+        - name: inventory
+          in: body
+          description: number of items to skip
+          required: true
+          schema:
+            $ref: "#/definitions/InventoryBody"
+      responses:
+        200:
+          description: Returns all inventory codes
+
+  /inventory/{id_inventory}:
+    put:
+      tags:
+        - Inventory
+      description: Update data nventory
+      parameters:
+        - name: id_inventory
+          in: path
+          description: Id inventory
+          required: true
+          type: integer
+          format: int64
+        - name: inventory
+          in: body
+          description: number of items to skip
+          required: true
+          schema:
+            $ref: "#/definitions/InventoryBody"
+      responses:
+        200:
+          description: Return all codes
+        404:
+          description: Item not found
+    delete:
+      tags:
+        - Inventory
+      description: Delete a code inventory
+      parameters:
+        - name: id_inventory
+          in: path
+          description: Id inventory for delete
+          required: true
+          type: integer
+          format: int64
+      responses:
+          200:
+            description: Return all codes
+          404:
+            description: Item not found
+
+  /classification:
+    get:
+      tags:
+        - Classification
+      description: Return code Classification
+      responses:
+        200:
+          description: Return all codes
+        404:
+          description: Item not found
+    post:
+      tags:
+        - Classification
+      description: Create a new inventory code
+      parameters:
+        - name: inventory
+          in: body
+          description: number of items to skip
+          required: true
+          schema:
+            $ref: "#/definitions/ClassificationBody"
+      responses:
+        200:
+          description: Returns all classification codes
+
+  /classification/{id_classification}:
+    put:
+      tags:
+        - Classification
+      description: Update data nventory
+      parameters:
+        - name: id_classification
+          in: path
+          description: Id inventory
+          required: true
+          type: integer
+          format: int64
+        - name: inventory
+          in: body
+          description: number of items to skip
+          required: true
+          schema:
+            $ref: "#/definitions/InventoryBody"
+      responses:
+        200:
+          description: Return all codes
+        404:
+          description: Item not found
+    delete:
+      tags:
+        - Classification
+      description: Delete a code inventory
+      parameters:
+        - name: id_classification
+          in: path
+          description: Id inventory for delete
+          required: true
+          type: integer
+          format: int64
+      responses:
+          200:
+            description: Return all codes
+          404:
+            description: Item not found
+
+  /product:
+    get:
+      tags:
+        - Product
+      description: Return code product
+      responses:
+        200:
+          description: Return all product
+        404:
+          description: Item not found
+    post:
+      tags:
+        - Product
+      description: Create a new product
+      parameters:
+        - name: product
+          in: body
+          description: number of items to skip
+          required: true
+          schema:
+            $ref: "#/definitions/ProductBody"
+      responses:
+        200:
+          description: Returns all classification codes
+
+  /product/{id_product}:
+    put:
+      tags:
+        - Product
+      description: Update data product
+      parameters:
+        - name: id_product
+          in: path
+          description: Id product
+          required: true
+          type: integer
+          format: int64
+        - name: product
+          in: body
+          description: number of items to skip
+          required: true
+          schema:
+            $ref: "#/definitions/ProductBody"
+      responses:
+        200:
+          description: Return all codes
+        404:
+          description: Item not found
+    delete:
+      tags:
+        - Product
+      description: Delete a product
+      parameters:
+        - name: id_product
+          in: path
+          description: Id product for delete
+          required: true
+          type: integer
+          format: int64
+      responses:
+          200:
+            description: Return all codes
+          404:
+            description: Item not found
 
   /spec:
     get:

@@ -1,0 +1,12 @@
+[
+    { 
+        "id_inventory": 10000, 
+        "bar_code": "123456780", 
+        "quantity": 10 
+    },
+    { 
+        "id_inventory": 10001, 
+        "bar_code": "234567890", 
+        "quantity": 10 
+    }
+]
