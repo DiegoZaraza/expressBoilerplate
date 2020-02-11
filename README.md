@@ -28,7 +28,7 @@ By integrating the entire team at this stage we can take the API to a better lev
 
 This is the test plan.
 
-(https://raw.githubusercontent.com/diegozaraza/expressBoilerplate/master/documents/TestPlanMoviesShop.pdf)
+[Ebay-Store](https://raw.githubusercontent.com/diegozaraza/expressBoilerplate/master/documents/TestPlanMoviesShop.pdf)
 
 ## What else are you passionate about in an API?
 The ease it has since being back can be connected to different types of interfaces where it will be much easier to control the data.
