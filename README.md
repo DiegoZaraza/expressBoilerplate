@@ -15,10 +15,13 @@ Video shop api has the following endpoints to interact with its inventory manage
 * Invoke the example REST endpoint `curl http://localhost:3000/api/v1/classification`
 * Invoke the example REST endpoint `curl http://localhost:3000/api/v1/product`
 
-## Think about how you validate information in and out. What makes a nice experience for your users?
+### Think about how you validate information in and out. What makes a nice experience for your users?
 I think the best idea to make the experience enjoyable is the ease of use that the data is clear to people when they navigate within the application and express each term so that people can understand what they are told and do at each step. the application.
 
-## What role should testing play?
+### Keep the resource simple.
+You must have good coding practices to keep the code as simple as possible for this you can use frameworks that give us a guideline on how to follow the coding and code clean.
+
+### What role should testing play?
 
 In my experience in tests it is one of the most important stages for the development of the project, since we can guarantee the quality of the API that is being developed, in this case a test plan would be established where not only a tester is involved to test but to the whole team and thus give added value with the tests. First, it would establish an approach where unit tests play an important role in development, since this way we guarantee that the API goes out with fewer errors to its functional testing stage, guaranteeing the integrity of each contained field.
 
@@ -30,7 +33,7 @@ This is the test plan.
 
 [Test Plan](https://raw.githubusercontent.com/diegozaraza/expressBoilerplate/master/documents/TestPlanMoviesShop.pdf)
 
-## What else are you passionate about in an API?
+### What else are you passionate about in an API?
 The ease it has since being back can be connected to different types of interfaces where it will be much easier to control the data.
 
 
